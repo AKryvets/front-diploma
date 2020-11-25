@@ -1,0 +1,1 @@
+export { redirectIfNotAuth } from './redirectIfNotAuth';
