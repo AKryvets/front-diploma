@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useWindowDimensions } from '../../packages/utils';
 
-import { AuthBlock, LoginPageWrapper, LogoTitle } from './styles';
+import { AuthBlock, LoginPageWrapper, LogoTitle, MarginBlock } from './styled';
 import { AnimationBlock, LogoBlock } from './components';
 
 export const AuthLayout = ({ children }) => {
@@ -16,6 +16,7 @@ export const AuthLayout = ({ children }) => {
         {width <= 900 && <LogoTitle>DevCoach</LogoTitle>}
         {children}
       </AuthBlock>
+      <MarginBlock />
     </LoginPageWrapper>
   );
 };

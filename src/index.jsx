@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
+import 'regenerator-runtime/runtime';
 
 import { rootReducer } from './reducer';
 import { rootSaga } from './saga';
@@ -11,7 +12,6 @@ import { LoginPage, RegistrationPage } from './pages/auth';
 import { ConfirmLogin } from './pages/confirm-login';
 import { createStore } from './packages';
 
-import 'regenerator-runtime/runtime';
 import './style.css';
 import 'react-notifications/lib/notifications.css';
 

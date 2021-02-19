@@ -1,12 +1,10 @@
-import React, { useCallback } from 'react';
-
-import { Link } from 'react-router-dom';
+import React, { useCallback, useEffect } from 'react';
 
 import { useDispatch } from 'react-redux';
 
 import Button from '@xcritical/button';
 
-import Form from '@xcritical/forms';
+import Form, { xcriticalFormReset } from '@xcritical/forms';
 
 import {
   FooterLinkWrapper,
@@ -16,12 +14,14 @@ import {
   SignInTitle,
   SignUpLink,
   SubmitWrapper,
-} from '../../styles';
+} from '../../styled';
 
 import { PathNames } from '../../../../const';
 
 import { authActions } from '../../store';
 import { InputField } from '../../../../packages';
+
+import { Link } from '../../../../styled';
 
 import { LOGIN_FORM_NAME, LoginFields } from './consts';
 
@@ -39,6 +39,13 @@ export const LoginForm = () => {
       dispatch(authActions.localLogin());
     },
     [dispatch]
+  );
+
+  useEffect(
+    () => () => {
+      dispatch(xcriticalFormReset(LOGIN_FORM_NAME));
+    },
+    []
   );
 
   return (

@@ -1,12 +1,12 @@
-import React, { useCallback } from 'react';
-
-import { Link } from 'react-router-dom';
+import React, { useCallback, useEffect } from 'react';
 
 import { useDispatch } from 'react-redux';
 
-import Form from '@xcritical/forms';
+import Form, { xcriticalFormReset } from '@xcritical/forms';
 
 import Button from '@xcritical/button';
+
+import { Link } from '../../../../styled';
 
 import {
   FormFieldWrapper,
@@ -15,7 +15,7 @@ import {
   SignInTitle,
   SignUpLink,
   SubmitWrapper,
-} from '../../styles';
+} from '../../styled';
 
 import { PathNames } from '../../../../const';
 
@@ -38,6 +38,13 @@ export const RegistrationForm = () => {
       dispatch(authActions.localRegistration());
     },
     [dispatch]
+  );
+
+  useEffect(
+    () => () => {
+      dispatch(xcriticalFormReset(REGISTRATION_FORM_NAME));
+    },
+    []
   );
 
   return (

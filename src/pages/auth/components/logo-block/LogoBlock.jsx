@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LogoTitle, LogoWrapper } from '../../styles';
+import { LogoTitle, LogoWrapper } from '../../styled';
 import { Carousel } from '../../../../packages/components';
 
 import { carouselElements } from './carouselElements';
