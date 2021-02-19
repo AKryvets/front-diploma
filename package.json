@@ -8,7 +8,7 @@
     "test": "jest",
     "start": "webpack-dev-server --open --hot --mode development",
     "build": "webpack --mode production",
-    "lint": "eslint ."
+    "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" --quiet"
   },
   "browserslist": "> 1%,last 2 versions",
   "devDependencies": {

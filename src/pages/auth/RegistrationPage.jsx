@@ -1,11 +1,10 @@
-import React from "react";
-import { AuthLayout } from "./AuthLayout";
-import { RegistrationForm } from "./components/registration-form";
+import React from 'react';
 
-export const RegistrationPage = () => {
-  return (
-    <AuthLayout>
-      <RegistrationForm />
-    </AuthLayout>
-  );
-};
+import { AuthLayout } from './AuthLayout';
+import { RegistrationForm } from './components/registration-form';
+
+export const RegistrationPage = () => (
+  <AuthLayout>
+    <RegistrationForm />
+  </AuthLayout>
+);

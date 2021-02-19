@@ -1,33 +1,44 @@
-import React, {useCallback} from 'react';
+import React, { useCallback } from 'react';
+
+import { Link } from 'react-router-dom';
+
+import { useDispatch } from 'react-redux';
+
+import Form from '@xcritical/forms';
+
+import Button from '@xcritical/button';
+
 import {
-  SignInTitle,
+  FormFieldWrapper,
   LabelWrapper,
   LoginFooter,
+  SignInTitle,
   SignUpLink,
   SubmitWrapper,
-  FormFieldWrapper,
 } from '../../styles';
-import {Link} from 'react-router-dom';
-import Form from '@xcritical/forms';
-import {PathNames} from '../../../../const';
-import {useDispatch} from 'react-redux';
-import {authActions} from '../../store';
-import {InputField} from '../../../../packages';
-import Button from '@xcritical/button';
-import {REGISTRATION_FORM_NAME, RegistrationFields} from './consts';
+
+import { PathNames } from '../../../../const';
+
+import { authActions } from '../../store';
+import { InputField } from '../../../../packages';
+
+import { REGISTRATION_FORM_NAME, RegistrationFields } from './consts';
 
 export const RegistrationForm = () => {
   const dispatch = useDispatch();
 
   const onGoogleRegistration = useCallback(() => {
-    dispatch(authActions.googleLogin())
+    dispatch(authActions.googleLogin());
   }, [dispatch]);
 
-  const onLocalRegistration = useCallback((e) => {
-    e.preventDefault();
+  const onLocalRegistration = useCallback(
+    (e) => {
+      e.preventDefault();
 
-    dispatch(authActions.localRegistration())
-  }, [dispatch]);
+      dispatch(authActions.localRegistration());
+    },
+    [dispatch]
+  );
 
   return (
     <>
@@ -64,12 +75,15 @@ export const RegistrationForm = () => {
           />
         </FormFieldWrapper>
 
-          <SubmitWrapper>
-            <Button appearance="googleRegistration" onClick={onGoogleRegistration}>
-              Sign up with Google
-            </Button>
-            <Button type='submit'>Submit</Button>
-          </SubmitWrapper>
+        <SubmitWrapper>
+          <Button
+            appearance="googleRegistration"
+            onClick={onGoogleRegistration}
+          >
+            Sign up with Google
+          </Button>
+          <Button type="submit">Submit</Button>
+        </SubmitWrapper>
       </Form>
       <LoginFooter>
         <LabelWrapper>You have an account?</LabelWrapper>

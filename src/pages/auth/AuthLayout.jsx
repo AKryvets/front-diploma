@@ -1,8 +1,9 @@
-import React from "react";
-import { LoginPageWrapper, LogoTitle } from "./styles";
-import { LogoBlock, AnimationBlock } from "./components";
-import { AuthBlock } from "./styles";
-import { useWindowDimensions } from "../../packages/utils";
+import React from 'react';
+
+import { useWindowDimensions } from '../../packages/utils';
+
+import { AuthBlock, LoginPageWrapper, LogoTitle } from './styles';
+import { AnimationBlock, LogoBlock } from './components';
 
 export const AuthLayout = ({ children }) => {
   const { width } = useWindowDimensions();

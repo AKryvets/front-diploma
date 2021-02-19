@@ -1,23 +1,23 @@
 import React from 'react';
+
 import {
+  AnimationBlockWrapper,
   AnimationWrapper,
-  CircleSmall,
-  CircleMedium,
   CircleLarge,
+  CircleMedium,
+  CircleSmall,
   CircleXLarge,
   CircleXXLarge,
-  AnimationBlockWrapper,
 } from '../../styles';
-import {LogoBlock} from '../logo-block';
 
 export const AnimationBlock = () => (
   <AnimationBlockWrapper>
     <AnimationWrapper>
-      <CircleSmall/>
-      <CircleMedium/>
-      <CircleLarge/>
-      <CircleXLarge/>
-      <CircleXXLarge/>
+      <CircleSmall />
+      <CircleMedium />
+      <CircleLarge />
+      <CircleXLarge />
+      <CircleXXLarge />
     </AnimationWrapper>
   </AnimationBlockWrapper>
 );

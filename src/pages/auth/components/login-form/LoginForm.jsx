@@ -1,21 +1,29 @@
-import React, { useCallback } from "react";
+import React, { useCallback } from 'react';
+
+import { Link } from 'react-router-dom';
+
+import { useDispatch } from 'react-redux';
+
+import Button from '@xcritical/button';
+
+import Form from '@xcritical/forms';
+
 import {
-  SignInTitle,
-  LabelWrapper,
-  SubmitWrapper,
-  LoginFooter,
-  SignUpLink,
   FooterLinkWrapper,
   FormFieldWrapper,
-} from "../../styles";
-import Button from "@xcritical/button";
-import Form from "@xcritical/forms";
-import { Link } from "react-router-dom";
-import { PathNames } from "../../../../const";
-import { useDispatch } from "react-redux";
-import { authActions } from "../../store";
-import { InputField } from "../../../../packages";
-import { LOGIN_FORM_NAME, LoginFields } from "./consts";
+  LabelWrapper,
+  LoginFooter,
+  SignInTitle,
+  SignUpLink,
+  SubmitWrapper,
+} from '../../styles';
+
+import { PathNames } from '../../../../const';
+
+import { authActions } from '../../store';
+import { InputField } from '../../../../packages';
+
+import { LOGIN_FORM_NAME, LoginFields } from './consts';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();

@@ -1,13 +1,14 @@
-import React, {useEffect} from 'react';
-import {useDispatch} from 'react-redux';
-import {authConfirmation} from './store';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { authConfirmation } from './store';
 
 export const ConfirmLogin = () => {
-   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-   useEffect(() => {
-     dispatch(authConfirmation.confirm());
-   }, [dispatch]);
+  useEffect(() => {
+    dispatch(authConfirmation.confirm());
+  }, [dispatch]);
 
-  return 'hello';
+  return <>hello</>;
 };

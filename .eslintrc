@@ -10,7 +10,8 @@
     "window": true,
     "describe": true,
     "it": true,
-    "expect": true
+    "expect": true,
+    "document": true
   },
   "plugins": ["jsx-a11y", "prettier"],
   "rules": {
@@ -34,7 +35,9 @@
     ],
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
+    "react/no-unescaped-entities": "off",
     "jsx-quotes": ["error", "prefer-double"],
+    "quotes": [2, "single"],
     "no-multiple-empty-lines": "error",
     "import/order": [
       "error",
@@ -54,10 +57,6 @@
             "pattern": "@xcritical/**",
             "group": "external",
             "position": "after"
-          },
-          {
-            "pattern": "@my-account/**",
-            "group": "internal"
           }
         ]
       }
@@ -76,7 +75,7 @@
       "error",
       {
         "semi": true,
-        "singleQuote": true,
+        "singleQuote": true
       }
     ]
   }
