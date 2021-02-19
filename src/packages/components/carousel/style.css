@@ -1,0 +1,17 @@
+.ui.card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: 150px;
+    width: 300px !important;
+}
+
+.carousel-indicators {
+   display: flex;
+   justify-content: center;
+}
+
+.carousel-indicators a {
+    margin-top: 5px;
+    margin-left: 5px ;
+}

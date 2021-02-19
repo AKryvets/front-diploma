@@ -1,27 +1,22 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { Route, Link } from 'react-router-dom';
-import { actions } from '../redux/actions';
-import { withRedirectIfNotAuth } from '../components/HOC';
-import { LoginGoogle } from '../pages';
+import React  from 'react';
+import {Router} from 'react-router-dom';
+import {ThemeProvider} from 'styled-components';
+import {getTheme} from '../theme';
+import {GlobalStyle} from './styles';
+import {NotificationContainer} from 'react-notifications';
+import {getHistory} from './browserHistory';
 
-export const App = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(actions.testAction());
-  }, []);
+export const App = ({ children }) => {
+  const history = getHistory();
+  const theme = getTheme();
 
   return (
-    <>
-      <Route exact path="/" render={withRedirectIfNotAuth(() => <Link to="/login">login</Link>)} />
-      <Route
-        path="/confirm-login"
-        render={() => {
-          window.opener.location.search = window.location.search;
-          window.close();
-        }}
-      />
-      <Route path="/login" render={() => <LoginGoogle />} />
-    </>
+    <ThemeProvider theme={theme}>
+        <Router history={history}>
+          <GlobalStyle/>
+          <NotificationContainer/>
+          { children }
+        </Router>
+    </ThemeProvider>
   );
 };
