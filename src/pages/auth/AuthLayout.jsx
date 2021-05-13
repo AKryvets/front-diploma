@@ -2,8 +2,10 @@ import React from 'react';
 
 import { useWindowDimensions } from '../../packages/utils';
 
+import { AnimationBlock } from '../../packages/components';
+
 import { AuthBlock, LoginPageWrapper, LogoTitle, MarginBlock } from './styled';
-import { AnimationBlock, LogoBlock } from './components';
+import { LogoBlock } from './components';
 
 export const AuthLayout = ({ children }) => {
   const { width } = useWindowDimensions();

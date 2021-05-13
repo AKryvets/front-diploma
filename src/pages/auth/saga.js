@@ -1,7 +1,13 @@
-import { put, select, takeLatest } from 'redux-saga/effects';
+import { put, select, takeEvery } from 'redux-saga/effects';
 import { NotificationManager } from 'react-notifications';
 
 import { xcriticalFormError, xcriticalFormShowErrors } from '@xcritical/forms';
+
+import { ACCESS_TOKEN_NAME, PathNames } from '../../const';
+
+import { appActions } from '../../app/store';
+
+import { history } from '../../app/history';
 
 import { GOOGLE_LOGIN, LOCAL_LOGIN, LOCAL_REGISTRATION } from './store';
 import { validate as validateLogin } from './components/login-form';
@@ -12,14 +18,14 @@ import { LOGIN_FORM_NAME, REGISTRATION_FORM_NAME } from './components';
 import { authSelectors } from './selectors';
 
 export function* watchAuthSaga() {
-  yield takeLatest(GOOGLE_LOGIN, handleGoogleLogin);
-  yield takeLatest(LOCAL_LOGIN, handleLocalLogin);
-  yield takeLatest(LOCAL_REGISTRATION, handleLocalRegistration);
+  yield takeEvery(GOOGLE_LOGIN, handleGoogleLogin);
+  yield takeEvery(LOCAL_LOGIN, handleLocalLogin);
+  yield takeEvery(LOCAL_REGISTRATION, handleLocalRegistration);
 }
 
 export function* handleGoogleLogin() {
   try {
-    // TODO  test this logic
+    // TODO  dashboard this logic
     const getGoogleAuthUrl = yield authApi.getGoogleAuthUrl();
     openWindowForAuth(getGoogleAuthUrl);
 
@@ -48,11 +54,13 @@ export function* handleLocalLogin() {
       return;
     }
 
-    const response = yield authApi.localLogin(requestModel);
+    const { accessToken } = yield authApi.localLogin(requestModel);
 
-    console.log(response);
+    localStorage.setItem(ACCESS_TOKEN_NAME, accessToken);
 
-    console.log('handleLocalLogin');
+    yield put(appActions.checkVerificationStatus());
+
+    NotificationManager.success('User successfully sign in');
   } catch (e) {
     NotificationManager.error(JSON.parse(e.message).message);
     console.error(e);
@@ -79,14 +87,13 @@ export function* handleLocalRegistration() {
       return;
     }
 
-    const response = yield authApi.localRegister({
+    yield authApi.localRegister({
       email,
       password,
     });
 
-    console.log(response);
-
-    console.log('handleLocalLogin');
+    history.push({ pathname: PathNames.login });
+    NotificationManager.success('User successfully registered');
   } catch (e) {
     NotificationManager.error(JSON.parse(e.message).message);
     console.error(e);

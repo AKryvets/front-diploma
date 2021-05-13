@@ -71,3 +71,7 @@ export const CircleXXLarge = styled.div`
   opacity: 0.05;
   animation: pulsate 3s ease-in-out infinite alternate;
 `;
+
+export const AnimationBlockWrapper = styled.div`
+  position: fixed;
+`;

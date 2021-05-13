@@ -66,6 +66,7 @@ export const RegistrationForm = () => {
           <Form.Field
             name={RegistrationFields.password}
             label="Password"
+            type="password"
             placeholder="Password"
             component={InputField}
             shouldFitContainer
@@ -76,6 +77,7 @@ export const RegistrationForm = () => {
           <Form.Field
             name={RegistrationFields.confirmPassword}
             label="Confirm password"
+            type="password"
             placeholder="Confirm password"
             component={InputField}
             shouldFitContainer

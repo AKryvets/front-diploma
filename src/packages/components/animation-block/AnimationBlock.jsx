@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { AnimationBlockWrapper } from '../../styled';
-
 import {
+  AnimationBlockWrapper,
   AnimationWrapper,
   CircleLarge,
   CircleMedium,
@@ -10,6 +9,8 @@ import {
   CircleXLarge,
   CircleXXLarge,
 } from './styled';
+
+import './style.css';
 
 export const AnimationBlock = () => (
   <AnimationBlockWrapper>

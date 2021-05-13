@@ -2,6 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 
 import { DefaultColors } from '../theme';
 
+import './fonts/fonts.css';
+
 const colors = {
   primaryBackground: DefaultColors.firstBlue,
   defaultTextColor: DefaultColors.lightPink,

@@ -6,6 +6,6 @@ export const defaultInput = createInputTheme({
   background: DefaultColors.secondBlue,
   borderColor: DefaultColors.firstBlue,
   color: DefaultColors.lightPink,
-  hoverBorderColor: DefaultColors.firstBlue,
+  hoverBorderColor: DefaultColors.lightBlue,
   invalidBorder: DefaultColors.red,
 });

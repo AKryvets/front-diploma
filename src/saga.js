@@ -1,7 +1,17 @@
 import { all } from 'redux-saga/effects';
 
-import { watchAuthConfirmationSaga, watchAuthSaga } from './pages';
+import { watchApp } from './app/saga';
+import {
+  watchAuthConfirmationSaga,
+  watchAuthSaga,
+  watchCompleteRegistration,
+} from './pages';
 
 export function* rootSaga() {
-  yield all([watchAuthConfirmationSaga(), watchAuthSaga()]);
+  yield all([
+    watchApp(),
+    watchAuthConfirmationSaga(),
+    watchAuthSaga(),
+    watchCompleteRegistration(),
+  ]);
 }

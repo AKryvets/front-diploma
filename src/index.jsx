@@ -8,8 +8,13 @@ import { rootReducer } from './reducer';
 import { rootSaga } from './saga';
 import { App } from './app/App';
 import { PathNames } from './const';
-import { LoginPage, RegistrationPage } from './pages/auth';
-import { ConfirmLogin } from './pages/confirm-login';
+import {
+  CompleteRegistration,
+  ConfirmLogin,
+  Dashboard,
+  LoginPage,
+  RegistrationPage,
+} from './pages';
 import { createStore } from './packages';
 
 import './style.css';
@@ -30,6 +35,12 @@ ReactDOM.render(
           component={RegistrationPage}
         />
         <Route exact path={PathNames.confirmLogin} component={ConfirmLogin} />
+        <Route exact path={PathNames.root} component={Dashboard} />
+        <Route
+          exact
+          path={PathNames.completeRegistration}
+          component={CompleteRegistration}
+        />
       </Switch>
     </App>
   </Provider>,

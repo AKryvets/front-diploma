@@ -71,6 +71,7 @@ export const LoginForm = () => {
             name={LoginFields.password}
             label="Password"
             placeholder="Password"
+            type="password"
             component={InputField}
             shouldFitContainer
           />

@@ -21,7 +21,7 @@ export const LOCAL_LOGIN = `${STORE_NAME}/localLogin`;
 export const LOCAL_REGISTRATION = `${STORE_NAME}/localRegistration`;
 
 export const authActions = {
-  setIsReady: authStore.actions.setIsReady,
+  ...authStore.actions,
   localLogin: createAction(LOCAL_LOGIN),
   localRegistration: createAction(LOCAL_REGISTRATION),
   googleLogin: createAction(GOOGLE_LOGIN),

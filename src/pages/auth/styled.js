@@ -9,10 +9,6 @@ export const LoginPageWrapper = styled.div`
   overflow: hidden;
 `;
 
-export const AnimationBlockWrapper = styled.div`
-  position: relative;
-`;
-
 export const FormFieldWrapper = styled.div`
   margin-bottom: 20px;
 `;
@@ -47,7 +43,7 @@ export const MarginBlock = styled.div`
 `;
 
 export const SignInTitle = styled.h1`
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   margin: 0;
   line-height: 1.5;
@@ -55,7 +51,7 @@ export const SignInTitle = styled.h1`
 `;
 
 export const LabelWrapper = styled.p`
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   line-height: 1.5;
   margin-bottom: 20px;
