@@ -28,8 +28,6 @@ export function* handleGoogleLogin() {
     // TODO  dashboard this logic
     const getGoogleAuthUrl = yield authApi.getGoogleAuthUrl();
     openWindowForAuth(getGoogleAuthUrl);
-
-    console.log('qqqqqqqqqqqqq');
   } catch (e) {
     console.error(e);
   }
@@ -38,8 +36,6 @@ export function* handleGoogleLogin() {
 export function* handleLocalLogin() {
   try {
     const { email, password } = yield select(authSelectors.getLoginFormData);
-
-    console.log(email, password, 'email, password');
 
     const requestModel = {
       email,

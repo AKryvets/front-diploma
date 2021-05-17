@@ -9,3 +9,11 @@ export const defaultInput = createInputTheme({
   hoverBorderColor: DefaultColors.lightBlue,
   invalidBorder: DefaultColors.red,
 });
+
+export const activeInput = createInputTheme({
+  background: DefaultColors.secondBlue,
+  borderColor: DefaultColors.lightBlue,
+  color: DefaultColors.lightPink,
+  hoverBorderColor: DefaultColors.lightBlue,
+  invalidBorder: DefaultColors.red,
+});

@@ -4,8 +4,8 @@ import { popoverThemeNamespace } from '@xcritical/popover';
 import { selectThemeNamespace } from '@xcritical/select';
 
 import { defaultButton, secondaryButton } from './button';
-import { defaultInput } from './input';
-import { defaultPopup } from './popup';
+import { activeInput, defaultInput } from './input';
+import { defaultPopup, errorPopup } from './popup';
 import { defaultSelect } from './select';
 
 export const getTheme = () => ({
@@ -18,6 +18,7 @@ export const getTheme = () => ({
   [inputThemeNamespace]: {
     appearance: {
       default: defaultInput,
+      active: activeInput,
     },
   },
   [selectThemeNamespace]: {
@@ -27,7 +28,8 @@ export const getTheme = () => ({
   },
   [popoverThemeNamespace]: {
     appearance: {
-      error: defaultPopup,
+      default: defaultPopup,
+      error: errorPopup,
     },
   },
 });

@@ -28,6 +28,7 @@ export function* handleInitApp() {
 
     yield put(appActions.setIsReady(true));
   } catch (e) {
+    yield put(appActions.setIsReady(true));
     catchError(e);
   }
 }

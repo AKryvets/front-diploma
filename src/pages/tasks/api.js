@@ -6,7 +6,10 @@ const getTasks = (query) =>
 const createTask = (data) =>
   wretchWithAuth('/api/tasks/create').post(data).json();
 
+const deleteTask = (id) => wretchWithAuth(`/api/tasks/${id}`).delete().json();
+
 export const tasksApi = {
   getTasks,
   createTask,
+  deleteTask,
 };

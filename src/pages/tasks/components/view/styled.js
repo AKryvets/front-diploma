@@ -10,9 +10,8 @@ export const CreateTaskButton = styled(Button)``;
 export const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
-
-export const FilterButton = styled(Button)``;
 
 export const Wrapper = styled.div`
   display: flex;
@@ -60,6 +59,10 @@ export const ViewButton = styled.div`
   border-radius: 4px;
   margin-top: 10px;
 
+  &:hover {
+    border: 1px solid ${DefaultColors.secondBlue};
+  }
+
   svg {
     fill: ${DefaultColors.blue};
   }
@@ -73,6 +76,11 @@ export const DeleteButton = styled.div`
   justify-content: center;
   border-radius: 4px;
   margin-top: 10px;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid ${DefaultColors.secondBlue};
+  }
 
   svg {
     fill: ${DefaultColors.red};
@@ -87,6 +95,11 @@ export const EditButton = styled.div`
   justify-content: center;
   border-radius: 4px;
   margin-top: 10px;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid ${DefaultColors.secondBlue};
+  }
 
   svg {
     fill: ${DefaultColors.lightBlue};
@@ -95,5 +108,14 @@ export const EditButton = styled.div`
 
 export const TaskViewButtonWrapper = styled.div`
   display: flex;
+  justify-content: space-around;
+`;
+
+export const FiltersWrapper = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 120px;
+  min-width: 200px;
   justify-content: space-around;
 `;

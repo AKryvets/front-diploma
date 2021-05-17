@@ -71,6 +71,8 @@
     "@xcritical/forms": "^0.4.5",
     "@xcritical/input": "^1.1.4",
     "@xcritical/popover": "^2.1.4",
+    "@xcritical/switch": "^1.0.1",
+    "react-spinners": "^0.10.6",
     "css-loader": "^5.0.1",
     "deepmerge": "^4.2.2",
     "dotenv": "^8.2.0",

@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { getTheme } from '../theme';
 
+import { Loader } from '../packages';
+
 import { GlobalStyle } from './styles';
 import { history } from './history';
 import { appSelectors } from './selectors';
@@ -23,7 +25,7 @@ export const App = ({ children }) => {
     dispatch(appActions.init());
   }, []);
 
-  console.log(isReady, 'isReady');
+  if (!isReady) return <Loader />;
 
   return (
     <ThemeProvider theme={theme}>

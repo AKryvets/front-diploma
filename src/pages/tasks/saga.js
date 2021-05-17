@@ -1,4 +1,4 @@
-import { put, select, takeEvery } from 'redux-saga/effects';
+import { delay, put, select, takeEvery } from 'redux-saga/effects';
 import { NotificationManager } from 'react-notifications';
 
 import { xcriticalFormError, xcriticalFormShowErrors } from '@xcritical/forms';
@@ -15,19 +15,67 @@ import { TaskCreatingProcessSteps } from './consts';
 export function* watchTasks() {
   yield takeEvery(tasksActions.initView.type, handleInitView);
   yield takeEvery(tasksActions.createTask.type, handleCreateTask);
+  yield takeEvery(tasksActions.search.type, handleSearch);
+  yield takeEvery(tasksActions.setFilters.type, handleFilter);
+  yield takeEvery(tasksActions.deleteTask.type, handleDeleteTask);
 }
 
 export function* handleInitView() {
   try {
     yield put(tasksActions.setIsReady(false));
 
-    const query = {
-      limit: 20,
-    };
+    const tasks = yield tasksApi.getTasks();
+
+    yield put(tasksActions.setTasks(tasks));
+    yield put(tasksActions.setIsReady(true));
+  } catch (e) {
+    catchError(e);
+  }
+}
+
+export function* handleDeleteTask({ payload: taskId }) {
+  try {
+    yield put(tasksActions.setIsReady(false));
+
+    yield tasksApi.deleteTask(taskId);
+
+    const { tasks } = yield select(tasksSelectors.getTasksData);
+
+    const filteredTasks = tasks.filter(({ _id }) => _id !== taskId);
+
+    yield put(tasksActions.setTasks(filteredTasks));
+    yield put(tasksActions.setIsReady(true));
+  } catch (e) {
+    catchError(e);
+  }
+}
+
+export function* handleSearch({ payload: search }) {
+  try {
+    yield put(tasksActions.setIsReady(false));
+
+    const query = {};
+
+    if (search) query.search = search;
 
     const tasks = yield tasksApi.getTasks(query);
 
     yield put(tasksActions.setTasks(tasks));
+    yield put(tasksActions.setIsReady(true));
+  } catch (e) {
+    catchError(e);
+  }
+}
+
+export function* handleFilter({ payload: filter }) {
+  try {
+    yield put(tasksActions.setIsReady(false));
+
+    const tasks = yield tasksApi.getTasks(filter);
+
+    yield put(tasksActions.setTasks(tasks));
+
+    yield delay(1000);
     yield put(tasksActions.setIsReady(true));
   } catch (e) {
     catchError(e);
@@ -53,7 +101,6 @@ export function* handleCreateTask() {
 
     const response = yield tasksApi.createTask(requestModel);
 
-    console.log(response);
     if (response) {
       yield put(tasksActions.setCurrentStep(TaskCreatingProcessSteps.View));
     }
