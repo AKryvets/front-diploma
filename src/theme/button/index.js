@@ -10,3 +10,12 @@ export const defaultButton = createButtonTheme({
   borderHoverColor: DefaultColors.blue,
   hoverBackground: DefaultColors.blue,
 });
+
+export const secondaryButton = createButtonTheme({
+  background: DefaultColors.secondBlue,
+  borderColor: DefaultColors.lightBlue,
+  color: DefaultColors.lightBlue,
+  hoverColor: DefaultColors.white,
+  borderHoverColor: DefaultColors.blue,
+  hoverBackground: DefaultColors.blue,
+});

@@ -1,17 +1,25 @@
 import React from 'react';
 
-import { Wrapper } from './styled';
-import { Header } from './Header';
-import { Sidebar } from './Sidebar';
+import { Grid } from '../Grid/Grid';
+
+import { DefaultColors } from '../../../theme';
+
+import { ContentWrapper, GridWrapper, Wrapper } from './styled';
+import { Sidebar } from './sidebar';
 
 export const LayoutWrapper = ({ children }) => {
-  console.log(123);
+  const gridStyles = {
+    width: 2000,
+    height: 900 / 3,
+  };
 
   return (
     <Wrapper>
-      <Header />
       <Sidebar />
-      {children}
+      <ContentWrapper>{children}</ContentWrapper>
+      <GridWrapper>
+        <Grid {...gridStyles} lineColor={DefaultColors.lightBlue} />
+      </GridWrapper>
     </Wrapper>
   );
 };

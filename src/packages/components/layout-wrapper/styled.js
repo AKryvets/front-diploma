@@ -5,36 +5,27 @@ import { DefaultColors } from '../../../theme';
 
 export const Wrapper = styled.div`
   width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   background: ${DefaultColors.darkBlue};
-`;
-
-export const HeaderWrapper = styled.div`
-  display: flex;
-  height: 75px;
-  width: 100%;
-  position: fixed;
-  z-index: 1;
-  background: ${DefaultColors.secondBlue};
 `;
 
 export const SidebarWrapper = styled.div`
   display: flex;
-  top: 75px;
-  height: calc(100% - 75px);
+  height: 100%;
   transition: 0.5s;
-  width: ${({ isOpen }) => (isOpen ? '200px' : '50px')};
-  position: fixed;
-  left: 0;
+  width: ${({ isOpen }) => (isOpen ? '250px' : '85px')};
   background: ${DefaultColors.secondBlue};
   border-right: 1px solid ${DefaultColors.thirdBlue};
+  z-index: 1;
 `;
 
 export const SidebarContent = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  padding: 15px;
 `;
 
 export const SidebarCloseButton = styled(ChevronLeftCircleIcon)`
@@ -45,4 +36,35 @@ export const SidebarCloseButton = styled(ChevronLeftCircleIcon)`
   border-radius: 25px;
   transition: 0.5s;
   transform: ${({ isOpen }) => !isOpen && 'rotate(180deg)'};
+`;
+
+export const ContentWrapper = styled.div`
+  padding: 25px 10px;
+  width: calc(100% - 250px);
+  margin: 0 auto;
+  height: 100%;
+  overflow: auto;
+  z-index: 1;
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: ${DefaultColors.secondBlue};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${DefaultColors.fifthBlue};
+    border-radius: 3em;
+    box-shadow: inset 1px 1px 10px #f3faf7;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: ${DefaultColors.fifthBlue};
+  }
+`;
+
+export const GridWrapper = styled.div`
+  position: fixed;
+  bottom: 0;
+  z-index: 0;
 `;

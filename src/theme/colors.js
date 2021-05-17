@@ -6,7 +6,10 @@ export const DefaultColors = {
   lightPink: '#8c91b6',
   secondBlue: '#1e2745',
   firstBlue: '#252e4b',
-  thirdBlue: '#3a77ad',
+  thirdBlue: '#3a77ad38',
+  fourthBlue: '#29324f',
+  fifthBlue: '#23385c',
   darkBlue: '#182039',
   red: '#ab3330',
+  beige: 'beige',
 };

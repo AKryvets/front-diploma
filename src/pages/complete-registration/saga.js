@@ -29,8 +29,6 @@ export function* handleLocalLogin() {
       completeRegistrationSelectors.getCompleteRegistrationFormData
     );
 
-    console.log(requestModel, 'requestModel');
-
     const errors = validate(requestModel);
 
     if (errors) {

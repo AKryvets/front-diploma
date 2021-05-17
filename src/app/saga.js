@@ -14,6 +14,7 @@ export function* watchApp() {
     appActions.checkVerificationStatus.type,
     checkVerificationStatus
   );
+  yield takeEvery(appActions.logout.type, logoutHandler);
 }
 
 export function* handleInitApp() {
@@ -41,7 +42,23 @@ export function* checkVerificationStatus() {
       return;
     }
 
-    history.push({ pathname: PathNames.root });
+    if (
+      window.location.pathname === PathNames.completeRegistration ||
+      window.location.pathname === PathNames.login ||
+      window.location.pathname === PathNames.registration
+    ) {
+      history.push({ pathname: PathNames.root });
+    }
+  } catch (e) {
+    catchError(e);
+  }
+}
+
+export function* logoutHandler() {
+  try {
+    localStorage.clear();
+
+    yield put(appActions.resetState());
   } catch (e) {
     catchError(e);
   }

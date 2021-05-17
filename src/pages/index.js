@@ -13,3 +13,9 @@ export {
   watchCompleteRegistration,
 } from './complete-registration';
 export { Dashboard } from './dashboard';
+export {
+  Tasks,
+  tasksReducer,
+  tasksReducerNamespace,
+  watchTasks,
+} from './tasks';
