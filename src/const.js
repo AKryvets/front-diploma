@@ -10,6 +10,7 @@ export const PathNames = {
   tasks: '/tasks',
   results: '/results',
   profile: '/profile',
+  docs: '/docs',
 };
 
 export const ACCESS_TOKEN_NAME = 'token';

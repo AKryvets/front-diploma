@@ -3,6 +3,7 @@ import LogoutVariantIcon from 'mdi-react/LogoutVariantIcon';
 import ClipboardCheckMultipleOutlineIcon from 'mdi-react/ClipboardCheckMultipleOutlineIcon';
 import ChartAreasplineIcon from 'mdi-react/ChartAreasplineIcon';
 import AccountIcon from 'mdi-react/AccountIcon';
+import TextBoxMultipleIcon from 'mdi-react/TextBoxMultipleIcon';
 
 import React from 'react';
 
@@ -35,19 +36,10 @@ export const sidebarItems = [
     icon: <AccountIcon />,
   },
   {
-    name: 'test4',
-    url: PathNames.root,
-    title: 'test4',
-  },
-  {
-    name: 'test5',
-    url: PathNames.root,
-    title: 'test5',
-  },
-  {
-    name: 'test6',
-    url: PathNames.root,
-    title: 'test6',
+    name: 'docs',
+    url: PathNames.docs,
+    title: 'Integration API',
+    icon: <TextBoxMultipleIcon />,
   },
   {
     name: 'logout',

@@ -2,6 +2,7 @@ import React, { memo, useCallback } from 'react';
 
 import TrashCanIcon from 'mdi-react/TrashCanIcon';
 import PencilIcon from 'mdi-react/PencilIcon';
+import ContentCopyIcon from 'mdi-react/ContentCopyIcon';
 
 import { useDispatch } from 'react-redux';
 
@@ -55,6 +56,9 @@ export const TaskView = memo(({ title, description, type, questions, _id }) => {
         <DeleteButton onClick={onDeleteButtonClick}>
           <TrashCanIcon />
         </DeleteButton>
+        <EditButton>
+          <ContentCopyIcon />
+        </EditButton>
         <EditButton>
           <PencilIcon />
         </EditButton>

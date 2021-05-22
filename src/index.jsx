@@ -12,6 +12,7 @@ import {
   CompleteRegistration,
   ConfirmLogin,
   Dashboard,
+  Docs,
   LoginPage,
   Profile,
   RegistrationPage,
@@ -42,6 +43,7 @@ ReactDOM.render(
         <Route exact path={PathNames.tasks} component={Tasks} />
         <Route exact path={PathNames.results} component={Results} />
         <Route exact path={PathNames.profile} component={Profile} />
+        <Route exact path={PathNames.docs} component={Docs} />
         <Route
           exact
           path={PathNames.completeRegistration}

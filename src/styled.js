@@ -21,6 +21,7 @@ export const Text = styled(LabelWrapper)`
   display: flex;
   align-items: center;
   color: ${({ color }) => color || DefaultColors.lightPink};
+  font-weight: ${({ weight }) => weight || 400};
 `;
 
 export const Container = styled.div`

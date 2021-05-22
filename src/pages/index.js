@@ -36,3 +36,4 @@ export {
   profileReducer,
   watchProfile,
 } from './profile';
+export { Docs } from './docs';
