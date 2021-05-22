@@ -8,6 +8,8 @@ export const PathNames = {
   completeRegistration: '/complete-registration',
   root: '/',
   tasks: '/tasks',
+  results: '/results',
+  profile: '/profile',
 };
 
 export const ACCESS_TOKEN_NAME = 'token';

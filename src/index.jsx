@@ -13,7 +13,9 @@ import {
   ConfirmLogin,
   Dashboard,
   LoginPage,
+  Profile,
   RegistrationPage,
+  Results,
   Tasks,
 } from './pages';
 import { createStore } from './packages';
@@ -38,6 +40,8 @@ ReactDOM.render(
         <Route exact path={PathNames.confirmLogin} component={ConfirmLogin} />
         <Route exact path={PathNames.root} component={Dashboard} />
         <Route exact path={PathNames.tasks} component={Tasks} />
+        <Route exact path={PathNames.results} component={Results} />
+        <Route exact path={PathNames.profile} component={Profile} />
         <Route
           exact
           path={PathNames.completeRegistration}

@@ -1,6 +1,8 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
+
+import { Modal } from '@xcritical/modal';
 
 import Switch from '@xcritical/switch';
 
@@ -12,6 +14,8 @@ import { Container } from '../../../../styled';
 import { tasksSelectors } from '../../selectors';
 
 import { Filter, Loader, Search } from '../../../../packages';
+
+import { PreviewModal } from './PreviewModal';
 
 import {
   ButtonsWrapper,
@@ -25,6 +29,7 @@ import { TaskView } from './TaskView';
 
 export const View = () => {
   const dispatch = useDispatch();
+  const [isModalOpen, setIsOpenModal] = useState(false);
   const { isReady, tasks, filters } = useSelector(tasksSelectors.getTasksData);
 
   const onCreateTaskButtonClick = useCallback(() => {
@@ -48,6 +53,14 @@ export const View = () => {
       );
     },
     [dispatch, filters]
+  );
+
+  const onTaskPreview = useCallback(
+    (task) => {
+      setIsOpenModal(true);
+      dispatch(tasksActions.setPreviewTask(task));
+    },
+    [dispatch]
   );
 
   useEffect(() => {
@@ -89,12 +102,19 @@ export const View = () => {
       {isReady ? (
         <TasksListWrapper>
           {tasks.map((task) => (
-            <TaskView {...task} />
+            <TaskView {...task} onTaskPreview={onTaskPreview} />
           ))}
         </TasksListWrapper>
       ) : (
         <Loader />
       )}
+      <Modal
+        isOpen={isModalOpen}
+        onModalCancel={() => setIsOpenModal(false)}
+        title="Task preview"
+      >
+        <PreviewModal />
+      </Modal>
     </Wrapper>
   );
 };

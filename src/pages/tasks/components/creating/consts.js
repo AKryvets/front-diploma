@@ -4,10 +4,13 @@ export const CreateTaskFields = {
   title: 'title',
   description: 'description',
   type: 'type',
+  linkForCheck: 'linkForCheck',
+  timeLimit: 'timeLimit',
+  showAnswers: 'showAnswers',
+  numberOfAttempts: 'numberOfAttempts',
 };
 
 export const TasksTypes = {
   Test: 'Test',
   Practical: 'Practical',
-  CustomPractical: 'Custom practical',
 };

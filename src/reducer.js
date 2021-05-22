@@ -5,6 +5,12 @@ import {
   authReducerNamespace,
   completeRegistrationReducer,
   completeRegistrationReducerNamespace,
+  dashboardReducer,
+  dashboardReducerNamespace,
+  profileReducer,
+  profileReducerNamespace,
+  resultsReducer,
+  resultsReducerNamespace,
   tasksReducer,
   tasksReducerNamespace,
 } from './pages';
@@ -19,5 +25,8 @@ export const rootReducer = {
   [completeRegistrationReducerNamespace]: completeRegistrationReducer,
   form: formReduce,
   [tasksReducerNamespace]: tasksReducer,
+  [dashboardReducerNamespace]: dashboardReducer,
   [errorReducerNamespace]: errorReducer,
+  [resultsReducerNamespace]: resultsReducer,
+  [profileReducerNamespace]: profileReducer,
 };

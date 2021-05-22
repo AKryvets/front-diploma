@@ -7,9 +7,13 @@ export const DefaultColors = {
   secondBlue: '#1e2745',
   firstBlue: '#252e4b',
   thirdBlue: '#3a77ad38',
+  sixBlue: '#5a69d533',
+  sevenBlue: '#252e4b78',
   fourthBlue: '#29324f',
   fifthBlue: '#23385c',
   darkBlue: '#182039',
   red: '#ab3330',
+  green: '#309d26',
+  lightRed: '#ff3530',
   beige: 'beige',
 };

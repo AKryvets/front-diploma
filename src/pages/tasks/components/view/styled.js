@@ -32,6 +32,7 @@ export const TaskViewWrapper = styled(Container)`
   cursor: pointer;
   transition: 0.5s;
   border: 1px solid ${DefaultColors.secondBlue};
+  justify-content: space-between;
 
   &:hover {
     transform: scale(1.05);
@@ -50,65 +51,19 @@ export const TaskIcon = styled.img`
   margin: auto;
 `;
 
-export const ViewButton = styled.div`
-  border: 1px solid ${DefaultColors.blue};
-  padding: 3px;
+export const Overlay = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #252e4b;
+  transition: 0.5s;
+  opacity: 0.8;
+  top: -0.5px;
+  left: -0.5px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  border-radius: 4px;
-  margin-top: 10px;
-
-  &:hover {
-    border: 1px solid ${DefaultColors.secondBlue};
-  }
-
-  svg {
-    fill: ${DefaultColors.blue};
-  }
-`;
-
-export const DeleteButton = styled.div`
-  border: 1px solid ${DefaultColors.red};
-  padding: 3px;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  margin-top: 10px;
-  cursor: pointer;
-
-  &:hover {
-    border: 1px solid ${DefaultColors.secondBlue};
-  }
-
-  svg {
-    fill: ${DefaultColors.red};
-  }
-`;
-
-export const EditButton = styled.div`
-  border: 1px solid ${DefaultColors.lightBlue};
-  padding: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  margin-top: 10px;
-  cursor: pointer;
-
-  &:hover {
-    border: 1px solid ${DefaultColors.secondBlue};
-  }
-
-  svg {
-    fill: ${DefaultColors.lightBlue};
-  }
-`;
-
-export const TaskViewButtonWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
+  flex-direction: column;
 `;
 
 export const FiltersWrapper = styled.div`
@@ -118,4 +73,30 @@ export const FiltersWrapper = styled.div`
   min-height: 120px;
   min-width: 200px;
   justify-content: space-around;
+`;
+
+export const ModalContentWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  justify-content: space-around;
+`;
+
+export const InfoBlockWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const StartButton = styled(Button)``;
+
+export const StartButtonWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+export const PreviewTaskIcon = styled.img`
+  width: 100px;
+  margin: 0 20px 20px;
 `;

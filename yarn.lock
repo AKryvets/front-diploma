@@ -1957,6 +1957,16 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
+"@xcritical/blanket@1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@xcritical/blanket/-/blanket-1.1.2.tgz#ce5f04c628da33978cfd34ae13cce71e939defdd"
+  integrity sha512-0OtjzASmZkG/rONn9luY5ZvTkLTxHTKNybBP/5gratKcKZvShJwynNHngfEUUjlXoKlQ8b34RWwIUlBi+6/agQ==
+  dependencies:
+    "@xcritical/theme" "^1.1.1"
+    lodash.get "4.x"
+    polished "^3.4.4"
+    utilitify "^1.0.3"
+
 "@xcritical/button@^2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@xcritical/button/-/button-2.1.2.tgz#607a5c95bc6ada97b18095866a6930ba92c804e3"
@@ -1965,6 +1975,16 @@
     "@xcritical/theme" "^1.1.1"
     lodash.get "^4.x"
     micro-memoize "^4.0.8"
+    polished "^3.4.4"
+
+"@xcritical/checkbox@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@xcritical/checkbox/-/checkbox-1.1.4.tgz#f1cf858ab4838903aea528b78c6813f49443dadf"
+  integrity sha512-elw6AwY1f2Ys3y0z7U9XGQa+e2Ul6nNWW23qmvI9kB2hE+mgmX1ioNXrdBG12H/cYKHams+lLMfDnaEKTy6iaA==
+  dependencies:
+    "@xcritical/theme" "^1.1.1"
+    lodash.get "^4.x"
+    micro-memoize "^4.0.9"
     polished "^3.4.4"
 
 "@xcritical/forms@^0.4.5":
@@ -1984,6 +2004,17 @@
     "@xcritical/utils" "^0.2.2"
     micro-memoize "^4.0.8"
 
+"@xcritical/modal@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@xcritical/modal/-/modal-1.4.0.tgz#9b6dd859d5267199ad90fc97b8c250e87dfa16bf"
+  integrity sha512-iT2QIqXjY//GFq74/JwrUEaBYIjMCyw54fDnbgPUOIaHkVRUI2kHf+xZRNrca1zneylE7YK3J59lk7Sz8fyJhw==
+  dependencies:
+    "@xcritical/blanket" "1.1.2"
+    "@xcritical/portal" "^0.1.2"
+    "@xcritical/theme" "^1.1.1"
+    "@xcritical/utils" "^0.2.1"
+    micro-memoize "^4.0.8"
+
 "@xcritical/popover@^2.1.4":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@xcritical/popover/-/popover-2.1.4.tgz#2f3b6e210448d92fe81a8e363a2bc8f3c2aaea83"
@@ -2001,6 +2032,11 @@
     popper.js "^1.16.1"
     raf-schd "^4.0.0"
     utilitify "^1.0.3"
+
+"@xcritical/portal@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@xcritical/portal/-/portal-0.1.2.tgz#7c16b2d570c121b9fa3d5aad01bacdee6706be3f"
+  integrity sha512-42v1KKq3Pnm2VnSCGTD9aG7lUR1yTmI1LsKZJMj0RwIoxcmYW9IDnEkcr/+8LA8Sm3Nrk2kkTb2aPFK29meG1g==
 
 "@xcritical/select@^1.1.5":
   version "1.1.5"
@@ -2039,7 +2075,7 @@
     polished "3.x"
     utilitify "^1.0.3"
 
-"@xcritical/utils@^0.2.2":
+"@xcritical/utils@^0.2.1", "@xcritical/utils@^0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@xcritical/utils/-/utils-0.2.2.tgz#172569a89d63ac995bdae17f5fc981481e87514b"
   integrity sha512-g28z8NLm2GqwXO1IU0Jis3ecrt8i1JpUDXRSGAHpntS6nd0Fen2kCGA1QBu6Q3l40qiUqQ/6qtrJceP5WH3L1g==
@@ -7169,7 +7205,7 @@ methods@~1.1.2:
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
   integrity sha1-VSmk1nZUE07cxSZmVoNbD4Ua/O4=
 
-micro-memoize@^4.0.8:
+micro-memoize@^4.0.8, micro-memoize@^4.0.9:
   version "4.0.9"
   resolved "https://registry.yarnpkg.com/micro-memoize/-/micro-memoize-4.0.9.tgz#b44a38c9dffbee1cefc2fd139bc8947952268b62"
   integrity sha512-Z2uZi/IUMGQDCXASdujXRqrXXEwSY0XffUrAOllhqzQI3wpUyZbiZTiE2JuYC0HSG2G7DbCS5jZmsEKEGZuemg==

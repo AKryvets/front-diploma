@@ -1,10 +1,13 @@
 import React, { useCallback } from 'react';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import HelpRhombusOutlineIcon from 'mdi-react/HelpRhombusOutlineIcon';
 
-import Form from '@xcritical/forms';
+import Form, { xcriticalFormPropertyChange } from '@xcritical/forms';
 
 import Button from '@xcritical/button';
+
+import Switch from '@xcritical/switch';
 
 import taskIcon from '../../../../../public/images/task-management.jpg';
 import { InputField } from '../../../../packages/form-fields/input';
@@ -16,6 +19,8 @@ import { TaskCreatingProcessSteps } from '../../consts';
 import { SelectField } from '../../../../packages/form-fields/select';
 
 import { Container } from '../../../../styled';
+
+import { tasksSelectors } from '../../selectors';
 
 import { CREATE_TASK_FORM_NAME, CreateTaskFields, TasksTypes } from './consts';
 
@@ -31,6 +36,9 @@ import { getTaskTypesOptions } from './utils';
 
 export const CreationForm = () => {
   const dispatch = useDispatch();
+  const { type, showAnswers } = useSelector(
+    tasksSelectors.getCreateTaskFormData
+  );
 
   const onSubmitHandle = useCallback(
     (e) => {
@@ -44,6 +52,21 @@ export const CreationForm = () => {
   const onBackButtonClickHandle = useCallback(() => {
     dispatch(tasksActions.setCurrentStep(TaskCreatingProcessSteps.View));
   }, [dispatch]);
+
+  const onConfigureQuestionsButtonClickHandle = useCallback(() => {
+    dispatch(
+      tasksActions.setCurrentStep(TaskCreatingProcessSteps.TestQuestions)
+    );
+  }, [dispatch]);
+
+  const onSwitchValueChange = useCallback(
+    (value, e) => {
+      dispatch(
+        xcriticalFormPropertyChange(CREATE_TASK_FORM_NAME, e.target.name, value)
+      );
+    },
+    [dispatch]
+  );
 
   return (
     <Wrapper>
@@ -75,9 +98,48 @@ export const CreationForm = () => {
             <Form.Field
               name={CreateTaskFields.type}
               label="Type"
-              placeholder="Type"
+              placeholder="Select"
               component={SelectField}
               options={getTaskTypesOptions(TasksTypes)}
+              shouldFitContainer
+            />
+          </FormFieldWrapper>
+          <FormFieldWrapper>
+            <Form.Field
+              name={CreateTaskFields.timeLimit}
+              label="Time limit"
+              placeholder="(minutes)"
+              component={InputField}
+              shouldFitContainer
+            />
+          </FormFieldWrapper>
+          {type?.value === TasksTypes.Practical && (
+            <FormFieldWrapper>
+              <Form.Field
+                name={CreateTaskFields.linkForCheck}
+                label="Link to the verification module"
+                placeholder="url"
+                component={InputField}
+                shouldFitContainer
+              />
+            </FormFieldWrapper>
+          )}
+          <FormFieldWrapper>
+            <Form.Field
+              name={CreateTaskFields.showAnswers}
+              label="Show answers after passing?"
+              component={Switch}
+              checked={showAnswers}
+              onChange={onSwitchValueChange}
+              shouldFitContainer
+            />
+          </FormFieldWrapper>
+          <FormFieldWrapper>
+            <Form.Field
+              name={CreateTaskFields.numberOfAttempts}
+              label="Number of attempts"
+              placeholder="Number of attempts"
+              component={InputField}
               shouldFitContainer
             />
           </FormFieldWrapper>
@@ -85,6 +147,15 @@ export const CreationForm = () => {
             <Button appearance="secondary" onClick={onBackButtonClickHandle}>
               Back
             </Button>
+            {type?.value === TasksTypes.Test && (
+              <Button
+                appearance="secondary"
+                onClick={onConfigureQuestionsButtonClickHandle}
+              >
+                <HelpRhombusOutlineIcon />
+                Configure questions
+              </Button>
+            )}
             <Button type="submit">Create task</Button>
           </ButtonsWrapper>
         </Form>

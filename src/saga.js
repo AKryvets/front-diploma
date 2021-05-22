@@ -5,6 +5,9 @@ import {
   watchAuthConfirmationSaga,
   watchAuthSaga,
   watchCompleteRegistration,
+  watchDashboard,
+  watchProfile,
+  watchResults,
   watchTasks,
 } from './pages';
 
@@ -15,5 +18,8 @@ export function* rootSaga() {
     watchAuthSaga(),
     watchCompleteRegistration(),
     watchTasks(),
+    watchDashboard(),
+    watchResults(),
+    watchProfile(),
   ]);
 }

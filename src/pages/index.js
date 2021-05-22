@@ -12,10 +12,27 @@ export {
   completeRegistrationReducer,
   watchCompleteRegistration,
 } from './complete-registration';
-export { Dashboard } from './dashboard';
 export {
   Tasks,
   tasksReducer,
   tasksReducerNamespace,
   watchTasks,
 } from './tasks';
+export {
+  Dashboard,
+  watchDashboard,
+  dashboardReducer,
+  dashboardReducerNamespace,
+} from './dashboard';
+export {
+  Results,
+  resultsReducer,
+  watchResults,
+  resultsReducerNamespace,
+} from './results';
+export {
+  Profile,
+  profileReducerNamespace,
+  profileReducer,
+  watchProfile,
+} from './profile';

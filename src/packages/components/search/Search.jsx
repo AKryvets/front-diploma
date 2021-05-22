@@ -28,8 +28,7 @@ export const Search = memo(({ onSearch }) => {
     <SearchWrapper>
       <InputField
         error={error}
-        appearance="active"
-        placeholder="Loader"
+        placeholder="Search"
         value={searchText}
         onChange={onSearchInputChange}
       />

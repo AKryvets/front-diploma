@@ -1,6 +1,8 @@
 import ViewDashboardVariantIcon from 'mdi-react/ViewDashboardVariantIcon';
 import LogoutVariantIcon from 'mdi-react/LogoutVariantIcon';
 import ClipboardCheckMultipleOutlineIcon from 'mdi-react/ClipboardCheckMultipleOutlineIcon';
+import ChartAreasplineIcon from 'mdi-react/ChartAreasplineIcon';
+import AccountIcon from 'mdi-react/AccountIcon';
 
 import React from 'react';
 
@@ -21,14 +23,16 @@ export const sidebarItems = [
     icon: <ClipboardCheckMultipleOutlineIcon />,
   },
   {
-    name: 'test2',
-    url: PathNames.root,
-    title: 'test2',
+    name: 'results',
+    url: PathNames.results,
+    title: 'Results',
+    icon: <ChartAreasplineIcon />,
   },
   {
-    name: 'test3',
-    url: PathNames.root,
-    title: 'test3',
+    name: 'profile',
+    url: PathNames.profile,
+    title: 'Profile',
+    icon: <AccountIcon />,
   },
   {
     name: 'test4',

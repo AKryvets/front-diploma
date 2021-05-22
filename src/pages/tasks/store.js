@@ -6,6 +6,7 @@ export const initialState = {
   isReady: false,
   tasks: [],
   filters: {},
+  previewTask: {},
   currentStep: TaskCreatingProcessSteps.View,
 };
 
@@ -26,6 +27,9 @@ const tasksStore = createSlice({
     },
     setFilters(state, action) {
       state.filters = action.payload;
+    },
+    setPreviewTask(state, action) {
+      state.previewTask = action.payload;
     },
     resetState: () => initialState,
   },

@@ -6,7 +6,7 @@ import { ErrorWrapper, Label } from '../../components';
 
 export const InputField = ({ error, label, ...rest }) => (
   <>
-    <Label>{label}</Label>
+    {label && <Label>{label}</Label>}
     <ErrorWrapper error={error}>
       <Input autoComplete="off" {...rest} />
     </ErrorWrapper>

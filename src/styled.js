@@ -18,6 +18,9 @@ export const LabelWrapper = styled.div`
 export const Text = styled(LabelWrapper)`
   font-size: ${({ size }) => size || '14px'};
   word-break: break-word;
+  display: flex;
+  align-items: center;
+  color: ${({ color }) => color || DefaultColors.lightPink};
 `;
 
 export const Container = styled.div`
